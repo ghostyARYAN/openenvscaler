@@ -17,10 +17,10 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "server.app:main"
+server = "app:main"
 
 [tool.setuptools]
-py-modules = ["models", "tasks", "data_loader", "kb", "client", "inference"]
+py-modules = ["app", "models", "tasks", "data_loader", "kb", "client", "inference"]
 
 [tool.setuptools.packages.find]
 include = ["server", "server.*"]

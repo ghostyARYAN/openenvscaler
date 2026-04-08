@@ -59,7 +59,7 @@ def _check_openenv_validate() -> bool:
 
 def _check_reset_ping(port: int = 8000) -> bool:
     python_bin = sys.executable
-    cmd = [python_bin, "-m", "uvicorn", "server.app:app", "--host", "127.0.0.1", "--port", str(port)]
+    cmd = [python_bin, "-m", "uvicorn", "app:app", "--host", "127.0.0.1", "--port", str(port)]
     proc = subprocess.Popen(
         cmd,
         cwd=str(ROOT),

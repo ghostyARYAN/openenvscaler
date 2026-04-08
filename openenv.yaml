@@ -2,5 +2,5 @@ spec_version: 1
 name: customer_support_benchmark
 type: space
 runtime: fastapi
-app: server.app:app
+app: app:app
 port: 8000
