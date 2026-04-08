@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-support-openenv-benchmark"
+version = "0.1.0"
+description = "OpenEnv customer support benchmark environment with graded tasks"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2.0",
+    "pydantic>=2.7.0",
+    "openenv-core[core]>=0.2.2",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.34.0",
+    "openai>=1.76.0",
+]
+
+[project.scripts]
+server = "server.app:main"
+
+[tool.setuptools]
+py-modules = ["models", "tasks", "data_loader", "kb", "client", "inference"]
+
+[tool.setuptools.packages.find]
+include = ["server", "server.*"]
