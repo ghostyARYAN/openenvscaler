@@ -20,7 +20,7 @@ dependencies = [
 server = "app:main"
 
 [tool.setuptools]
-py-modules = ["app", "models", "tasks", "data_loader", "kb", "client", "inference"]
+py-modules = ["app", "customer_support_environment", "models", "tasks", "data_loader", "kb", "client", "inference"]
 
 [tool.setuptools.packages.find]
 include = ["server", "server.*"]

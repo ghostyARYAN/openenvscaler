@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from openenv.core.env_server.http_server import create_app
 
+from customer_support_environment import CustomerSupportEnvironment
 from models import SupportAction, SupportObservation
-from server.customer_support_environment import CustomerSupportEnvironment
 
 
 app = create_app(
