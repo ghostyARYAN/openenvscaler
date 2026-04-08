@@ -1,11 +1,15 @@
 import asyncio
+import os
 
 from client import CustomerSupportEnvClient
 from models import SupportAction
 
 
+BASE_URL = os.getenv("TARGET_BASE_URL", "http://127.0.0.1:8000")
+
+
 async def run_episode(difficulty: str, index: int) -> dict:
-    env = CustomerSupportEnvClient(base_url="http://127.0.0.1:8000")
+    env = CustomerSupportEnvClient(base_url=BASE_URL)
     await env.connect()
     reset_result = await env.reset(difficulty=difficulty, index=index)
 

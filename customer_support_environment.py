@@ -87,7 +87,8 @@ class CustomerSupportEnvironment(Environment[SupportAction, SupportObservation, 
     ) -> SupportObservation:
         del timeout_s, kwargs
         if self._expected is None:
-            raise RuntimeError("Call reset before step")
+            # HTTP mode can be stateless across requests; initialize lazily.
+            self.reset()
         if self._done:
             return self._make_observation(reward=0.0, done=True, feedback="Episode already done")
 
