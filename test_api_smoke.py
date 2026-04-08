@@ -5,7 +5,7 @@ from client import CustomerSupportEnvClient
 from models import SupportAction
 
 
-BASE_URL = os.getenv("TARGET_BASE_URL", "http://127.0.0.1:8000")
+BASE_URL = os.getenv("TARGET_BASE_URL", "https://krishdev99-openenvscaler.hf.space")
 
 
 async def run_episode(difficulty: str, index: int) -> dict:
