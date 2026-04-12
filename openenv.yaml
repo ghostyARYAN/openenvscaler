@@ -4,3 +4,26 @@ type: space
 runtime: fastapi
 app: app:app
 port: 8000
+tasks:
+	- id: easy_classify_respond
+		difficulty: easy
+		objective: Classify ticket correctly and provide the expected response.
+		grader: grade_easy
+	- id: medium_kb_grounded_response
+		difficulty: medium
+		objective: Use the correct KB entry and provide a grounded response.
+		grader: grade_medium
+	- id: hard_escalation_safety
+		difficulty: hard
+		objective: Make the right escalation decision and keep the response safe/polite.
+		grader: grade_hard
+graders:
+	- name: grade_easy
+		module: tasks
+		function: grade_easy
+	- name: grade_medium
+		module: tasks
+		function: grade_medium
+	- name: grade_hard
+		module: tasks
+		function: grade_hard

@@ -34,6 +34,17 @@ TASKS: Dict[str, TaskSpec] = {
     ),
 }
 
+# Compatibility registry for validators that expect explicit task->grader mapping.
+TASKS_WITH_GRADERS: List[dict] = [
+    {
+        "task_id": task.task_id,
+        "difficulty": task.difficulty,
+        "objective": task.objective,
+        "grader": task.grader_name,
+    }
+    for task in TASKS.values()
+]
+
 
 def task_for_difficulty(difficulty: str) -> TaskSpec:
     normalized = difficulty.strip().lower()
