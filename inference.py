@@ -5,7 +5,10 @@ import json
 import os
 from typing import Dict, List
 
+from dotenv import load_dotenv
 from openai import OpenAI
+
+load_dotenv()
 
 from models import SupportAction
 from server.customer_support_environment import CustomerSupportEnvironment
